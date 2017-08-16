@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script src="js/server.js"></script>
+<script src="js/axios.js"></script>
+
+<div class="container">
+	<div class="jumbotron">
+		<h3 class="text-center">Submit a Ticker</h3>
+        	<form id="searchForm">
+                <input type="text" class="form-control" id="searchText" placeholder="Search Ticker">
+                <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+            </form>
+		</div>
+	</div>
+<div class="container">
+            <h3>Core Data</h3>
+            <table class="table">
+              <thead class="thead-default">
+                <tr>
+                  <th>Ticker</th>
+                  <th>Most Recent Date</th>
+                  <th>Volume</th>
+                  <th>Volume Two Days Before</th>
+                  <th>20 Day MA</th>
+                  <th>50 Day MA</th>
+                  <th>MACD Day Before</th>
+                  <th>MACD Two Days Before</th>
+                  <th>MACD Three Days Before</th>
+                  <th>RSI</th>
+                </tr>
+              </thead>
+              <tbody id="insert">
+              
+              </tbody>
+            </table>
+</div>
+<p>Click the button to find a ticker.</p>
+
+<button onclick="findTicker()">Submit a Ticker</button>
+
+<p id="demo"></p>
+
+<script>
+function findTicker() {
+    var username = prompt("Please enter a ticker", "AAPL");
+    if (username!= null) {
+        document.getElementById("demo").innerHTML =
+        "Hello " + username + "! How are you today?";
+    }
+
+
+}
+</script>
+
+</body>
+</html>
